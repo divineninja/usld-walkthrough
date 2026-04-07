@@ -32,22 +32,44 @@ Customer workflow for self-registering payment information via secure link:
 - Entering credit card details securely
 - Confirmation and completion of registration
 
+### [Agent Registration — New Flow Walkthrough](./Agent%20Registration%20-%20new%20flow.md)
+Updated agent registration workflow using the unified 4-step wizard, including:
+- 4-step registration wizard (Listing Information, Schedule, Customer Information, Summary)
+- Payment plan selection during registration
+- Real-time Payment Link Monitor with activity timeline
+- Service agreement signing and payment authorization
+- Credit card registration with billing information and authorization form
+- Confirmation and welcome email sequence
+
 ## Summary
 
 This documentation provides end-to-end guidance for implementing a secure, user-friendly listing registration system with multiple payment pathways. The walkthroughs ensure both agents and customers have clear, visual instructions for each step of the process, promoting efficient and compliant operations.
 
 ## Converting Markdown to DOCX
 
-To convert the Markdown files to DOCX format, use Pandoc. For example, to convert `Agent.md` to `Docx/Agent.docx`:
+To convert the Markdown files to DOCX format, use [Pandoc](https://pandoc.org/installing.html). Run each command from the repository root.
 
 ```bash
+# Agent walkthrough (original flow)
 pandoc -o Docx/Agent.docx -f markdown -t docx Agent.md
+
+# Agent Registration — New Flow
+pandoc -o "Docx/Agent Registration - new flow.docx" -f markdown -t docx "Agent Registration - new flow.md"
+
+# Customer onboarding
 pandoc -o Docx/Customer.docx -f markdown -t docx Customer.md
-pandoc -o Docx/Customer Payment Link.docx -f markdown -t docx Customer Payment Link.md
+
+# Customer payment link
+pandoc -o "Docx/Customer Payment Link.docx" -f markdown -t docx "Customer Payment Link.md"
 ```
 
-Repeat this command for other Markdown files as needed, replacing `Agent.md` with the appropriate filename.
+> **Note:** Pandoc does not embed local images by default. To include images in the DOCX output, ensure the working directory is the repository root when running the commands above, or use the `--resource-path` flag:
+> ```bash
+> pandoc -o "Docx/Agent Registration - new flow.docx" -f markdown -t docx \
+>   --resource-path=. \
+>   "Agent Registration - new flow.md"
+> ```
 
 ---
 
-*Last Updated: February 25, 2026*
+*Last Updated: April 7, 2026*
